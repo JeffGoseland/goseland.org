@@ -2,3 +2,8 @@
   from = "/steve-goseland/*"
   to = "https://stevegoseland.netlify.app/:splat"
   status = 200
+  
+  [[redirects]]
+  from = "/office-crossword/*"
+  to = "https://office-crossword.netlify.app/:splat"
+  status = 200
