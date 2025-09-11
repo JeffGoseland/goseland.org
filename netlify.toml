@@ -7,3 +7,8 @@
   from = "/office-crossword/*"
   to = "https://office-crossword.netlify.app/:splat"
   status = 200
+  
+  [[redirects]]
+  from = "/spotify-llm-driven-playlist/*"
+  to = "https://spotify-llm-driven-playlist.netlify.app/:splat"
+  status = 200
