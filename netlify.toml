@@ -10,5 +10,5 @@
   
   [[redirects]]
   from = "/spotify-llm-driven-playlist/*"
-  to = "https://spotify-llm-driven-playlist.netlify.app/:splat"
+  to = "https://spotify-llm-driven-playlist.netlify.app/:splat?original_path=:splat"
   status = 200
