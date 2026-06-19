@@ -1,14 +1,18 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
 [[redirects]]
   from = "/steve-goseland/*"
   to = "https://stevegoseland.netlify.app/:splat"
   status = 200
-  
-  [[redirects]]
+
+[[redirects]]
   from = "/office-crossword/*"
   to = "https://office-crossword.netlify.app/:splat"
   status = 200
-  
-  [[redirects]]
+
+[[redirects]]
   from = "/spotify-llm-driven-playlist/*"
   to = "https://spotify-llm-driven-playlist.netlify.app/:splat?original_path=:splat"
   status = 200

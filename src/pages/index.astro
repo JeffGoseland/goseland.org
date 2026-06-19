@@ -1,0 +1,183 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <section id="intro">
+    <div class="container">
+      <h1>ML Engineer building intelligent systems at scale</h1>
+      <p class="subtitle">Principal ML Engineer | Music Cognition Research</p>
+      <p class="lead">
+        Twenty years at Walmart designing multi-echelon MILP systems across 23 fulfillment
+        centers, with documented supply chain impact measured in hundreds of millions of
+        dollars. Currently building production ML at Acorns: winback modeling on Databricks
+        with MLflow and SHAP.
+      </p>
+      <p class="lead">
+        Exploring where machine learning meets music understanding and human emotion.
+        Potential PhD direction: music cognition and optimization as an interdisciplinary
+        research path.
+      </p>
+      <p class="scroll-hint">
+        <a href="#work">Explore my work below &darr;</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="container">
+      <h2>Work</h2>
+
+      <article class="card">
+        <h3>Designed Multi-Echelon MILP System for Supply Chain Network</h3>
+        <p class="meta">Walmart &middot; 2006&ndash;May 2025</p>
+        <p>
+          Designed the formulation and directed engineering implementation for supply chain
+          optimization at scale: not project management alone, but MILP systems thinking
+          deployed across real infrastructure.
+        </p>
+        <ul>
+          <li>23 fulfillment centers, multi-layer network design</li>
+          <li>CPLEX formulations: simplex, branch-and-bound, cutting planes, Dantzig-Wolfe</li>
+          <li>Inventory optimization via pull-forward and capacity-capping systems</li>
+          <li>Order Well: Kafka-based async order optimization, 95% good-pick utilization</li>
+          <li>13B daily transactions, 24 direct reports</li>
+        </ul>
+        <div class="metrics">
+          <span>$900M documented savings</span>
+          <span>23 FCs</span>
+          <span>13B daily transactions</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>Built Production LightGBM Churn/Winback Model</h3>
+        <p class="meta">Acorns &middot; Current contractor engagement (~6 months)</p>
+        <p>
+          End-to-end ML lifecycle on an imbalanced production dataset: feature engineering,
+          hyperparameter tuning, threshold optimization, and explainability for deployment.
+        </p>
+        <ul>
+          <li>~1% positive rate, 126K rows; scale_pos_weight ~77</li>
+          <li>LightGBM with Optuna Bayesian hyperparameter tuning</li>
+          <li>Threshold optimization via net revenue sweep</li>
+          <li>Deployment stack: Databricks, MLflow, SHAP</li>
+          <li>Production code: PySpark, condensed single-call style</li>
+        </ul>
+        <div class="metrics">
+          <span>Recall: 0.881</span>
+          <span>ROC-AUC: 0.924</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+
+      <article class="card">
+        <p class="tag">Primary</p>
+        <h3>Music Intelligence Pipeline</h3>
+        <p>
+          Emotion-aware music analysis system that predicts arousal and valence from audio,
+          then tags music semantically to prevent hallucination and provide an interpretable
+          interface over raw predictions.
+        </p>
+        <ul>
+          <li>Dataset: DEAM (Database for Emotional Analysis in Music)</li>
+          <li>Features: librosa, OpenSMILE</li>
+          <li>Model: XGBoost for arousal/valence prediction</li>
+          <li>Interface: Shiny for Python (interactive querying)</li>
+        </ul>
+        <p>
+          Raw predictions (R&sup2; ~0.43) are directional, not precise. The semantic layer
+          interprets them into broad emotional tags: uplifting, introspective, and similar.
+          All models are approximations; usefulness beats precision in human-centered domains.
+        </p>
+        <div class="metrics">
+          <span>R&sup2; ~0.43</span>
+          <span>Pearson r ~0.66</span>
+        </div>
+        <div class="links">
+          <a href="https://github.com/JeffGoseland/music_intelligence_pipeline" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <p class="tag">Secondary</p>
+        <h3>Neural Bard: Spotify LLM Playlist Generator</h3>
+        <p>
+          Full-stack application that generates Spotify playlists from natural language via
+          LLM (Grok), then creates them through OAuth. Applied music plus LLM: shipped product,
+          not just research.
+        </p>
+        <ul>
+          <li>Frontend: HTML5, Bootstrap 5, vanilla JavaScript</li>
+          <li>Backend: Netlify serverless functions</li>
+          <li>LLM: x.ai Grok-3-fast</li>
+          <li>Features: duplicate detection, smart playlist management, OAuth flow</li>
+        </ul>
+        <div class="links">
+          <a href="https://spotify-llm-driven-playlist.netlify.app/" target="_blank" rel="noopener noreferrer">Live demo</a>
+          <a href="https://github.com/JeffGoseland/spotify-llm-driven-playlist" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <p class="tag">Tertiary</p>
+        <h3>Aimpoint Digital LP Challenge</h3>
+        <p>
+          Mixed-integer linear programming applied to a vehicle routing dataset using
+          scipy.optimize.linprog with the HiGHS solver. Demonstrates MILP fluency in code:
+          constraint design, solver selection, and practical optimization workflow.
+        </p>
+        <div class="links">
+          <a href="https://github.com/JeffGoseland/ad-challenge" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2>About</h2>
+      <p class="lead">
+        Principal-level ML engineer with two decades of production systems experience at
+        Walmart, now focused on rigorous ML engineering and music cognition research.
+      </p>
+      <p>
+        MS Data Science, University of Notre Dame (May 2026). Currently engaged with Acorns
+        on production winback modeling. Also building
+        <a href="https://noeticiq.io/" target="_blank" rel="noopener noreferrer">NoeticIQ</a>,
+        a consulting brand at the intersection of data and cognition.
+      </p>
+      <p><strong>Research interests</strong></p>
+      <ul style="margin: 0.5rem 0 1rem 1.25rem;">
+        <li>Music cognition: emotional trajectory, arousal/valence, Tonnetz geometry</li>
+        <li>Optimization: MILP, integer programming, constraint design</li>
+        <li>Human-centered AI systems with interpretable interfaces</li>
+      </ul>
+      <p>
+        Exploring PhD paths in music cognition plus optimization: ML/CS with a music focus,
+        or music informatics with an optimization angle. Preference for local/part-time,
+        remote funded international, or selective full-time programs.
+      </p>
+      <p style="margin-top: 1rem;">
+        <em>All models are approximations. Usefulness beats precision. Interpretability matters in human-centered domains.</em>
+      </p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <div class="links">
+        <a href="mailto:jeff@goseland.org">jeff@goseland.org</a>
+        <a href="https://www.linkedin.com/in/jeffgoseland/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/JeffGoseland" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://noeticiq.io/" target="_blank" rel="noopener noreferrer">NoeticIQ</a>
+      </div>
+    </div>
+  </section>
+</Layout>
