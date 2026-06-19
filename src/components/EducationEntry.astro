@@ -1,0 +1,57 @@
+---
+interface Props {
+  school: string;
+  location: string;
+  degree: string;
+  dates: string;
+  note?: string;
+  courses?: string[];
+  variant?: "default" | "orange";
+}
+
+const { school, location, degree, dates, note, courses, variant = "default" } = Astro.props;
+
+function splitIntoColumns(items: string[], columnCount: number): string[][] {
+  const columns = Array.from({ length: columnCount }, () => [] as string[]);
+  items.forEach((item, index) => {
+    columns[index % columnCount].push(item);
+  });
+  return columns;
+}
+
+const courseColumns = courses ? splitIntoColumns(courses, 4) : [];
+---
+
+<section class:list={["edu-entry", variant === "orange" && "edu-entry-orange"]}>
+  <div class="edu-header">
+    <span class="edu-school">{school}</span>
+    <span class="edu-location">{location}</span>
+  </div>
+  <div class="edu-degree-row">
+    <span class="edu-degree">{degree}</span>
+    <span class="edu-dates">{dates}</span>
+  </div>
+  {note && <p class="edu-note">{note}</p>}
+  {
+    courses && courses.length > 0 && (
+      <div class:list={["coursework-card", variant === "orange" && "coursework-card-orange"]}>
+        <div class="coursework-heading">
+          <svg class="coursework-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg>
+          <span>Coursework</span>
+        </div>
+        <div class="coursework-columns">
+          {courseColumns.map((column) => (
+            <ul class="coursework-col">
+              {column.map((course) => (
+                <li>{course}</li>
+              ))}
+            </ul>
+          ))}
+        </div>
+      </div>
+    )
+  }
+</section>

@@ -1,0 +1,55 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  currentPage="work"
+  title="Work | Jeff Goseland"
+  description="Production ML and supply chain optimization experience at Walmart and Acorns."
+>
+  <div class="page">
+    <h2>Work</h2>
+
+    <article class="card">
+      <h3>Designed Multi-Echelon MILP System for Supply Chain Network</h3>
+      <p class="meta">Walmart &middot; 2006&ndash;May 2025</p>
+      <p>
+        Designed the formulation and directed engineering implementation for supply chain
+        optimization at scale: not project management alone, but MILP systems thinking
+        deployed across real infrastructure.
+      </p>
+      <ul>
+        <li>23 fulfillment centers, multi-layer network design</li>
+        <li>CPLEX formulations: simplex, branch-and-bound, cutting planes, Dantzig-Wolfe</li>
+        <li>Inventory optimization via pull-forward and capacity-capping systems</li>
+        <li>Order Well: Kafka-based async order optimization, 95% good-pick utilization</li>
+        <li>13B daily transactions, 24 direct reports</li>
+      </ul>
+      <div class="metrics">
+        <span>$900M documented savings</span>
+        <span>23 FCs</span>
+        <span>13B daily transactions</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <h3>Built Production LightGBM Churn/Winback Model</h3>
+      <p class="meta">Acorns &middot; Current contractor engagement (~6 months)</p>
+      <p>
+        End-to-end ML lifecycle on an imbalanced production dataset: feature engineering,
+        hyperparameter tuning, threshold optimization, and explainability for deployment.
+      </p>
+      <ul>
+        <li>~1% positive rate, 126K rows; scale_pos_weight ~77</li>
+        <li>LightGBM with Optuna Bayesian hyperparameter tuning</li>
+        <li>Threshold optimization via net revenue sweep</li>
+        <li>Deployment stack: Databricks, MLflow, SHAP</li>
+        <li>Production code: PySpark, condensed single-call style</li>
+      </ul>
+      <div class="metrics">
+        <span>Recall: 0.881</span>
+        <span>ROC-AUC: 0.924</span>
+      </div>
+    </article>
+  </div>
+</Layout>
