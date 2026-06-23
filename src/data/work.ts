@@ -5,9 +5,10 @@ export const workRoles: WorkRole[] = [
     organization: "Acorns",
     location: "Remote",
     role: "Data Scientist / ML Engineer, Winback Model",
-    dates: "Notre Dame Capstone Project January - May 2026",
+    dates: "January - May 2026",
     bullets: [
-      "Built production LightGBM churn/winback model on imbalanced data (~1% positive rate, 126K rows).",
+      "Notre Dame Capstone Project",
+      "Built production LightGBM churn/winback model on imbalanced data (~1% positive rate, 126K samples).",
       "Tuned with Optuna, optimized thresholds via net revenue sweep, deployed with Databricks, MLflow, and SHAP.",
       "Achieved recall 0.881 and ROC-AUC 0.924 in production PySpark pipeline.",
     ],
