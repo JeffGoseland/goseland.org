@@ -1,11 +1,12 @@
 :root {
   color-scheme: light;
-  --bg: #fff;
+  --bg: #f0f6fb;
   --text: #111;
   --muted: #555;
   --border: #ddd;
   --card: #fff;
-  --accent: #2563eb;
+  --accent: #4682b4;
+  --accent-bright: #3b82f6;
   --max-width: 720px;
   --header-bg: #000;
   --header-text: #e8e8e8;
@@ -62,27 +63,66 @@ a:hover {
   color: var(--header-text);
 }
 
+.tab-bar-shell {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+}
+
+.tab-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  color: var(--header-text);
+  text-decoration: none;
+}
+
+.tab-brand:hover {
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.tab-brand-logo {
+  display: block;
+  flex-shrink: 0;
+}
+
+.tab-brand-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
 .tab-bar-inner {
   display: flex;
+  flex: 1;
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.25rem;
-  padding: 0.5rem;
-  max-width: 960px;
-  margin: 0 auto;
 }
 
 .tab-link {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.65rem 1rem;
+  gap: 0.3rem;
+  padding: 0.55rem 0.85rem;
   border-radius: 6px;
   color: var(--header-text);
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 500;
   text-decoration: none;
   transition: background 0.15s ease, color 0.15s ease;
+}
+
+.tab-icon {
+  width: 1.35rem;
+  height: 1.35rem;
+  flex-shrink: 0;
 }
 
 .tab-link:hover {
@@ -96,6 +136,41 @@ a:hover {
   color: var(--header-active-text);
 }
 
+.tab-link.active .tab-icon {
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .tab-link {
+    padding: 0.65rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .tab-brand-name {
+    display: inline;
+  }
+}
+
+@media (max-width: 767px) {
+  .tab-bar-shell {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .tab-brand {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .tab-brand-name {
+    display: none;
+  }
+
+  .tab-bar-inner {
+    width: 100%;
+  }
+}
+
 .page {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -106,16 +181,9 @@ a:hover {
   max-width: 960px;
 }
 
-.edu-entry {
-  margin-bottom: 2.5rem;
-}
-
-.edu-entry:last-child {
-  margin-bottom: 0;
-}
-
-.edu-header,
-.edu-degree-row {
+/* Shared entry header pattern (education + resume) */
+.entry-header,
+.entry-subheader {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -123,26 +191,21 @@ a:hover {
   flex-wrap: wrap;
 }
 
-.edu-school {
+.entry-subheader {
+  margin-top: 0.35rem;
+}
+
+.entry-primary {
   font-weight: 700;
   font-size: 0.95rem;
   letter-spacing: 0.02em;
 }
 
-.edu-location {
-  color: var(--muted);
+.entry-subtitle {
   font-size: 0.95rem;
 }
 
-.edu-degree-row {
-  margin-top: 0.35rem;
-}
-
-.edu-degree {
-  font-size: 0.95rem;
-}
-
-.edu-dates {
+.entry-dates {
   background: #dbeafe;
   color: #1e3a5f;
   font-size: 0.75rem;
@@ -152,15 +215,22 @@ a:hover {
   white-space: nowrap;
 }
 
-.edu-entry-orange .edu-dates {
-  background: color-mix(in srgb, var(--noetic-orange) 18%, white);
-  color: #7a4a10;
+.edu-entry {
+  margin-bottom: 2.5rem;
 }
 
-.edu-gpa {
-  margin-top: 0.35rem;
-  font-size: 0.9rem;
+.edu-entry:last-child {
+  margin-bottom: 0;
+}
+
+.edu-location {
   color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.edu-entry-orange .entry-dates {
+  background: color-mix(in srgb, var(--noetic-orange) 18%, white);
+  color: #7a4a10;
 }
 
 .edu-note {
@@ -235,6 +305,21 @@ a:hover {
   }
 }
 
+.resume-location {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.resume-bullets {
+  margin: 0.75rem 0 0 1.1rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.resume-bullets li {
+  margin-bottom: 0.4rem;
+}
+
 .intro-layout {
   display: grid;
   gap: 2rem;
@@ -243,48 +328,64 @@ a:hover {
 
 @media (min-width: 768px) {
   .intro-layout {
-    grid-template-columns: 240px 1fr;
+    grid-template-columns: 220px 1fr;
     align-items: start;
     gap: 2.5rem;
+  }
+
+  .profile-card {
+    margin: 0;
   }
 }
 
 .profile-card {
   text-align: center;
+  max-width: 220px;
+  margin: 0 auto;
 }
 
 .profile-icon {
+  width: 56px;
+  height: 56px;
   margin-bottom: 0.75rem;
 }
 
 .profile-name {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 600;
   letter-spacing: -0.02em;
   margin-bottom: 0.5rem;
 }
 
 .profile-tagline {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-style: italic;
   margin-bottom: 0.35rem;
+  line-height: 1.4;
 }
 
 .profile-role {
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   margin-bottom: 1rem;
+  line-height: 1.4;
 }
 
 .profile-links {
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  word-break: break-word;
 }
 
 .intro-content {
   font-size: 1.05rem;
+}
+
+.intro-heading {
+  font-size: 1.15rem;
+  margin: 1.5rem 0 0.75rem;
 }
 
 h2 {
@@ -303,12 +404,6 @@ h3 {
 .lead {
   font-size: 1.05rem;
   margin-bottom: 1rem;
-}
-
-.meta {
-  color: var(--muted);
-  font-size: 0.9rem;
-  margin-bottom: 0.75rem;
 }
 
 .card {
@@ -364,16 +459,6 @@ h3 {
   white-space: nowrap;
 }
 
-.tag {
-  display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--muted);
-  margin-bottom: 0.5rem;
-}
-
 .links {
   display: flex;
   flex-wrap: wrap;
@@ -396,13 +481,6 @@ footer {
   font-size: 0.85rem;
   text-align: center;
   border-top: 1px solid var(--border);
-}
-
-@media (min-width: 768px) {
-  .tab-link {
-    padding: 0.85rem 1.5rem;
-    font-size: 0.95rem;
-  }
 }
 
 @media (max-width: 600px) {

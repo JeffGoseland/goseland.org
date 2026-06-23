@@ -1,5 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { projects } from "../data/projects.ts";
 ---
 
 <Layout
@@ -7,68 +9,10 @@ import Layout from "../layouts/Layout.astro";
   title="Projects | Jeff Goseland"
   description="Music cognition research, full-stack LLM applications, and optimization projects."
 >
-  <div class="page">
+  <div class="page page-wide">
     <h2>Projects</h2>
-
-    <article class="card">
-      <p class="tag">Primary</p>
-      <h3>Music Intelligence Pipeline</h3>
-      <p>
-        Emotion-aware music analysis system that predicts arousal and valence from audio,
-        then tags music semantically to prevent hallucination and provide an interpretable
-        interface over raw predictions.
-      </p>
-      <ul>
-        <li>Dataset: DEAM (Database for Emotional Analysis in Music)</li>
-        <li>Features: librosa, OpenSMILE</li>
-        <li>Model: XGBoost for arousal/valence prediction</li>
-        <li>Interface: Shiny for Python (interactive querying)</li>
-      </ul>
-      <p>
-        Raw predictions (R&sup2; ~0.43) are directional, not precise. The semantic layer
-        interprets them into broad emotional tags: uplifting, introspective, and similar.
-        All models are approximations; usefulness beats precision in human-centered domains.
-      </p>
-      <div class="metrics">
-        <span>R&sup2; ~0.43</span>
-        <span>Pearson r ~0.66</span>
-      </div>
-      <div class="links">
-        <a href="https://github.com/JeffGoseland/music_intelligence_pipeline" target="_blank" rel="noopener noreferrer">GitHub</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <p class="tag">Secondary</p>
-      <h3>Neural Bard: Spotify LLM Playlist Generator</h3>
-      <p>
-        Full-stack application that generates Spotify playlists from natural language via
-        LLM (Grok), then creates them through OAuth. Applied music plus LLM: shipped product,
-        not just research.
-      </p>
-      <ul>
-        <li>Frontend: HTML5, Bootstrap 5, vanilla JavaScript</li>
-        <li>Backend: Netlify serverless functions</li>
-        <li>LLM: x.ai Grok-3-fast</li>
-        <li>Features: duplicate detection, smart playlist management, OAuth flow</li>
-      </ul>
-      <div class="links">
-        <a href="https://spotify-llm-driven-playlist.netlify.app/" target="_blank" rel="noopener noreferrer">Live demo</a>
-        <a href="https://github.com/JeffGoseland/spotify-llm-driven-playlist" target="_blank" rel="noopener noreferrer">GitHub</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <p class="tag">Tertiary</p>
-      <h3>Aimpoint Digital LP Challenge</h3>
-      <p>
-        Mixed-integer linear programming applied to a vehicle routing dataset using
-        scipy.optimize.linprog with the HiGHS solver. Demonstrates MILP fluency in code:
-        constraint design, solver selection, and practical optimization workflow.
-      </p>
-      <div class="links">
-        <a href="https://github.com/JeffGoseland/ad-challenge" target="_blank" rel="noopener noreferrer">GitHub</a>
-      </div>
-    </article>
+    {projects.map((project) => (
+      <ProjectCard {...project} />
+    ))}
   </div>
 </Layout>

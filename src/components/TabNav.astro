@@ -1,5 +1,6 @@
 ---
-export type NavPage = "intro" | "work" | "projects" | "education" | "about" | "contact";
+import NavIcon from "./NavIcon.astro";
+import type { NavPage } from "../types";
 
 interface Props {
   current: NavPage;
@@ -12,23 +13,29 @@ const tabs: { id: NavPage; label: string; href: string }[] = [
   { id: "work", label: "Work", href: "/work" },
   { id: "projects", label: "Projects", href: "/projects" },
   { id: "education", label: "Education", href: "/education" },
-  { id: "about", label: "About", href: "/about" },
   { id: "contact", label: "Contact", href: "/contact" },
 ];
 ---
 
 <nav class="tab-bar" aria-label="Portfolio sections">
-  <div class="tab-bar-inner">
-    {
-      tabs.map((tab) => (
-        <a
-          href={tab.href}
-          class:list={["tab-link", { active: current === tab.id }]}
-          aria-current={current === tab.id ? "page" : undefined}
-        >
-          {tab.label}
-        </a>
-      ))
-    }
+  <div class="tab-bar-shell">
+    <a href="/" class="tab-brand" aria-label="Jeff Goseland home">
+      <img src="/favicon.svg" alt="" width="32" height="32" class="tab-brand-logo" />
+      <span class="tab-brand-name">Jeff Goseland</span>
+    </a>
+    <div class="tab-bar-inner">
+      {
+        tabs.map((tab) => (
+          <a
+            href={tab.href}
+            class:list={["tab-link", { active: current === tab.id }]}
+            aria-current={current === tab.id ? "page" : undefined}
+          >
+            <NavIcon name={tab.id} />
+            <span>{tab.label}</span>
+          </a>
+        ))
+      }
+    </div>
   </div>
 </nav>

@@ -1,0 +1,23 @@
+---
+import type { WorkRole } from "../types";
+
+type Props = WorkRole;
+
+const { organization, location, role, dates, bullets } = Astro.props;
+---
+
+<article class="card resume-entry">
+  <div class="entry-header">
+    <span class="entry-primary">{organization}</span>
+    <span class="resume-location">{location}</span>
+  </div>
+  <div class="entry-subheader">
+    <span class="entry-subtitle">{role}</span>
+    <span class="entry-dates">{dates}</span>
+  </div>
+  <ul class="resume-bullets">
+    {bullets.map((bullet) => (
+      <li>{bullet}</li>
+    ))}
+  </ul>
+</article>

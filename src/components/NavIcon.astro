@@ -1,0 +1,63 @@
+---
+export type NavIconName = "intro" | "work" | "projects" | "education" | "contact";
+
+interface Props {
+  name: NavIconName;
+}
+
+const { name } = Astro.props;
+
+const attrs = {
+  class: "tab-icon",
+  width: "24",
+  height: "24",
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  "stroke-width": "1.75",
+  "stroke-linecap": "round",
+  "stroke-linejoin": "round",
+  "aria-hidden": "true",
+};
+---
+
+{name === "intro" && (
+  <svg {...attrs}>
+    <path d="M3 14c2.5-4 4.5-4 7 0s4.5 4 7 0 2.5-4 4-4" />
+  </svg>
+)}
+
+{name === "work" && (
+  <svg {...attrs}>
+    <path d="M8 9V8a1.75 1.75 0 0 1 1.75-1.75h4.5A1.75 1.75 0 0 1 16 8v1" />
+    <rect x="6" y="9" width="12" height="9" rx="1.75" />
+    <path d="M6 13h12" />
+    <path d="M10 9V7.5" />
+    <path d="M14 9V7.5" />
+    <path d="M10 7.5h4" />
+  </svg>
+)}
+
+{name === "projects" && (
+  <svg {...attrs}>
+    <path d="M6 18 10 12 14 15 18 8" />
+    <path d="M16 8h3v3" />
+  </svg>
+)}
+
+{name === "education" && (
+  <svg {...attrs}>
+    <path d="M4 8.5 12 5l8 3.5-8 3.5-8-3.5z" />
+    <path d="M7 10.2V15c0 0 2.2 2 5 2s5-2 5-2v-4.8" />
+    <path d="M19 9.5V15" />
+  </svg>
+)}
+
+{name === "contact" && (
+  <svg {...attrs}>
+    <path d="M5 12h10" />
+    <path d="M13 8l4 4-4 4" />
+    <path d="M5 8c0-1.5 1-2.5 2.5-2.5H14" opacity="0.7" />
+    <path d="M5 16c0 1.5 1 2.5 2.5 2.5H14" opacity="0.7" />
+  </svg>
+)}

@@ -1,0 +1,117 @@
+import type { WorkRole } from "../types";
+
+export const workRoles: WorkRole[] = [
+  {
+    organization: "Acorns",
+    location: "Remote",
+    role: "Data Scientist / ML Engineer, Winback Model",
+    dates: "Notre Dame Capstone Project January - May 2026",
+    bullets: [
+      "Built production LightGBM churn/winback model on imbalanced data (~1% positive rate, 126K rows).",
+      "Tuned with Optuna, optimized thresholds via net revenue sweep, deployed with Databricks, MLflow, and SHAP.",
+      "Achieved recall 0.881 and ROC-AUC 0.924 in production PySpark pipeline.",
+    ],
+  },
+  {
+    organization: "Walmart Technology, Replenishment and Supply Chain",
+    location: "Bentonville, AR",
+    role: "Principal Product Manager",
+    dates: "Apr, 2022 - May, 2025",
+    bullets: [
+      "Led the Inventory Placement product, a mixed integer linear program to place online-only items in optimal fulfillment centers while minimizing cost, packages to the customer, and capacity constraints with a two-day delivery promise.",
+      "Led Target Safety Stock optimization using forward-looking demand and lead-time variability to optimize additional inventory by store, DC, and FC against carrying costs and target service levels.",
+      "Cross-functionally managed product goals with Engineering, Business Inventory Transformation, End-to-End Supply Chain, and Data Science teams across five time zones.",
+      "Coordinated with next-gen fulfillment planning, order execution, replenishment data foundation, and supply chain optimization teams to optimize node inventory across the network.",
+      "Approved and validated modeling and optimization methodologies with post-implementation back-testing and validation.",
+      "Managed and prioritized 1–12 month backlogs for Targets and Placement products across bi-weekly, quarterly, and annual planning cycles.",
+    ],
+  },
+  {
+    organization: "Walmart Labs Replenishment",
+    location: "Bentonville, AR",
+    role: "Principal Software Engineer",
+    dates: "Apr, 2019 - Apr, 2022",
+    bullets: [
+      "While on EDF, increased customer in-stock by 40 basis points and saved close to $900M in FY21 by running approximately 13B functional transactions for 500,000 store-item combinations in 2 hours 30 minutes.",
+      "Implemented Cassandra, Kafka, Java Spring Boot, MeghaCache, and React/Redux for the EDF product, deployed cloud-native on Walmart OpenStack and Azure intranet clouds.",
+      "Served as tech lead, product manager, resource manager, and technical development resource for EDF; led up to 24 direct-report associates.",
+      "Worked with cross-functional teams in Bangalore, Reston, VA, and Sunnyvale on Order Well, Enterprise Inventory, Transportation, Order Management, and forecasting platforms.",
+      "Drove Kinetica GPU DB proof of concept to production: Kafka ingestion through Spark to in-DB aggregation with REST API at under 20 ms and 110,000+ transactions per second.",
+      "Drove Riverbed application monitoring evaluation, eventually replaced by Dynatrace based on cost and company direction.",
+    ],
+  },
+  {
+    organization: "Walmart Labs Replenishment",
+    location: "Bentonville, AR",
+    role: "Technical Manager",
+    dates: "Feb, 2018 - Apr, 2019",
+    bullets: [
+      "Led design and engineering architecture for On-Demand Replenishment (ODR) and Event Driven Fulfillment (EDF), a microservice-driven fulfillment and replenishment system.",
+      "Delivered EDF to replace GRS for products fulfilled to stores through DCs with reserve inventory stored at the DC.",
+    ],
+  },
+  {
+    organization: "Walmart Labs Replenishment",
+    location: "Bentonville, AR",
+    role: "Technical Expert",
+    dates: "Apr, 2016 - Feb, 2018",
+    bullets: [
+      "Led and engineered Pull Forward product to optimize inbound replenishment for DC labor by smoothing demand and pulling future orders forward while guaranteeing shelf capacity.",
+      "Introduced the first modern topic/queue integration of Online Grocery Pickup from Walmart.com into Home Office Replenishment.",
+      "Led design and engineering architecture for On-Demand Replenishment (ODR) and Event Driven Fulfillment (EDF).",
+    ],
+  },
+  {
+    organization: "Sam's Club Innovations",
+    location: "Bentonville, AR",
+    role: "Senior Manager",
+    dates: "Jul, 2015 - Apr, 2016",
+    bullets: [
+      "Project and design lead for Café Reinvention in Bentonville Club, delivering a 40% increase in traffic and revenue through kiosk/tablet self-service ordering.",
+      "Program lead for back office digitization to reduce paper in clubs; guided KPI project vision for centralized digital reporting to club operations.",
+    ],
+  },
+  {
+    organization: "Sam's Club Innovations",
+    location: "Bentonville, AR",
+    role: "Project Manager III",
+    dates: "Oct, 2012 - Jul, 2015",
+    bullets: [
+      "Functional lead for Groupon-like member service offering for business members.",
+      "Led cross-functional teams delivering reporting and forecasting tools for club wages, inventory management, front-end efficiencies, and self-checkout.",
+      "Defined savings methodologies for innovations projects including club wage optimization, sales driven stocking, and front-end optimization.",
+    ],
+  },
+  {
+    organization: "Sam's Club Innovations",
+    location: "Bentonville, AR",
+    role: "Project Manager II",
+    dates: "Jan, 2011 - Oct, 2012",
+    bullets: [
+      "Project lead on cross-functional initiative aligning club, market, region, and divisional daily financial and membership incentive tracking reporting.",
+      "Founded the Innovations team community service committee, leading 3–4 service events annually.",
+    ],
+  },
+  {
+    organization: "Walmart ISD, Replenishment & Forecasting Systems",
+    location: "Bentonville, AR",
+    role: "Technical Lead",
+    dates: "Jun, 2004 - Jan, 2011",
+    bullets: [
+      "Project and technical lead for Demand Chain Profiling; recommended cancellation after proving accuracy gains did not translate to bottom-line benefit, saving $18M in capital.",
+      "GRS Reporting Workbench technical lead; led cross-functional requirements and an innovative approach to replenishment reporting.",
+      "GRS phase 2 technical lead for Walmart engineering, business partners, and third-party teams, reducing future development effort by 20–40 hours per process analyzed.",
+      "Mentored five associates formally and dozens informally; led mentoring and training circles for the replenishment area.",
+    ],
+  },
+  {
+    organization: "Washburn University",
+    location: "Topeka, KS",
+    role: "WebCT Online Course Instructor / Creator",
+    dates: "Oct, 2000 - May, 2004",
+    bullets: [
+      "Created online courses and trained faculty and students on online courseware.",
+      "Facilitated training sessions for groups of 300–400 local and remote students.",
+    ],
+  },
+];
