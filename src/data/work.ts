@@ -30,8 +30,8 @@ export const workRoles: WorkRole[] = [
   {
     organization: "Walmart Labs Replenishment",
     location: "Bentonville, AR",
-    role: "Principal Software Engineer",
-    dates: "Apr, 2019 - Apr, 2022",
+    role: "Principal Software Engineer, Technical Manager, Technical (Staff) Expert",
+    dates: "Apr, 2016 - Apr, 2022",
     bullets: [
       "While on EDF, increased customer in-stock by 40 basis points and saved close to $900M in FY21 by running approximately 13B functional transactions for 500,000 store-item combinations in 2 hours 30 minutes.",
       "Implemented Cassandra, Kafka, Java Spring Boot, MeghaCache, and React/Redux for the EDF product, deployed cloud-native on Walmart OpenStack and Azure intranet clouds.",
@@ -39,56 +39,24 @@ export const workRoles: WorkRole[] = [
       "Worked with cross-functional teams in Bangalore, Reston, VA, and Sunnyvale on Order Well, Enterprise Inventory, Transportation, Order Management, and forecasting platforms.",
       "Drove Kinetica GPU DB proof of concept to production: Kafka ingestion through Spark to in-DB aggregation with REST API at under 20 ms and 110,000+ transactions per second.",
       "Drove Riverbed application monitoring evaluation, eventually replaced by Dynatrace based on cost and company direction.",
-    ],
-  },
-  {
-    organization: "Walmart Labs Replenishment",
-    location: "Bentonville, AR",
-    role: "Technical Manager",
-    dates: "Feb, 2018 - Apr, 2019",
-    bullets: [
       "Led design and engineering architecture for On-Demand Replenishment (ODR) and Event Driven Fulfillment (EDF), a microservice-driven fulfillment and replenishment system.",
       "Delivered EDF to replace GRS for products fulfilled to stores through DCs with reserve inventory stored at the DC.",
-    ],
-  },
-  {
-    organization: "Walmart Labs Replenishment",
-    location: "Bentonville, AR",
-    role: "Technical Expert",
-    dates: "Apr, 2016 - Feb, 2018",
-    bullets: [
       "Led and engineered Pull Forward product to optimize inbound replenishment for DC labor by smoothing demand and pulling future orders forward while guaranteeing shelf capacity.",
       "Introduced the first modern topic/queue integration of Online Grocery Pickup from Walmart.com into Home Office Replenishment.",
       "Led design and engineering architecture for On-Demand Replenishment (ODR) and Event Driven Fulfillment (EDF).",
     ],
   },
   {
-    organization: "Sam's Club Innovations",
+    organization: "Sam's Club Innovations - Operations Excellence",
     location: "Bentonville, AR",
-    role: "Senior Manager",
-    dates: "Jul, 2015 - Apr, 2016",
+    role: "Senior Manager, Project Manager III, Project Manager II",
+    dates: "Jan, 2011 - Apr, 2016",
     bullets: [
       "Project and design lead for Café Reinvention in Bentonville Club, delivering a 40% increase in traffic and revenue through kiosk/tablet self-service ordering.",
       "Program lead for back office digitization to reduce paper in clubs; guided KPI project vision for centralized digital reporting to club operations.",
-    ],
-  },
-  {
-    organization: "Sam's Club Innovations",
-    location: "Bentonville, AR",
-    role: "Project Manager III",
-    dates: "Oct, 2012 - Jul, 2015",
-    bullets: [
       "Functional lead for Groupon-like member service offering for business members.",
       "Led cross-functional teams delivering reporting and forecasting tools for club wages, inventory management, front-end efficiencies, and self-checkout.",
       "Defined savings methodologies for innovations projects including club wage optimization, sales driven stocking, and front-end optimization.",
-    ],
-  },
-  {
-    organization: "Sam's Club Innovations",
-    location: "Bentonville, AR",
-    role: "Project Manager II",
-    dates: "Jan, 2011 - Oct, 2012",
-    bullets: [
       "Project lead on cross-functional initiative aligning club, market, region, and divisional daily financial and membership incentive tracking reporting.",
       "Founded the Innovations team community service committee, leading 3–4 service events annually.",
     ],
