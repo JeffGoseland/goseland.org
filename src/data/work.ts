@@ -5,7 +5,7 @@ export const workRoles: WorkRole[] = [
     organization: "Acorns",
     location: "Remote",
     role: "Data Scientist / ML Engineer, Winback Model",
-    dates: "January - May 2026",
+    dates: "January - May 2025",
     bullets: [
       "Notre Dame Capstone Project",
       "Built production LightGBM churn/winback model on imbalanced data (~1% positive rate, 126K samples).",
